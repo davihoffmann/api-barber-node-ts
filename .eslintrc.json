@@ -15,5 +15,18 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "import/extensions": [
+        "error",
+        {"devDependencies": true},
+        "ignorePackages",
+        {
+          "ts": "never"
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
     }
 }
