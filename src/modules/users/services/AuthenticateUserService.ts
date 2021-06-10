@@ -33,9 +33,9 @@ class AuthenticateUserService {
       throw new AppError('Incorrect email/password combination.', 401);
     }
 
-    if (!user.password) {
-      throw new AppError('Incorrect email/password combination.');
-    }
+    // if (!user.password) {
+    //   throw new AppError('Incorrect email/password combination.');
+    // }
 
     // USA O AWAIT ANTES DA CHAMA DA FUNÇÃO POIS ELA RETORN UMA PROMISE
     const passwordMatched = await this.hashProvider.compareHash(
