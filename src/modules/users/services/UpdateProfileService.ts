@@ -37,8 +37,8 @@ class UpdateProfileService {
 
     const userWithUpdatedEmail = await this.usersRepository.findByEmail(email);
 
-    if (userWithUpdatedEmail && userWithUpdatedEmail.id === user_id) {
-      throw new AppError('E-mail alredy in use.');
+    if (userWithUpdatedEmail && userWithUpdatedEmail.id !== user_id) {
+      throw new AppError('Already have a user with this email');
     }
 
     user.name = name;
